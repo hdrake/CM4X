@@ -1,0 +1,16 @@
+# run: conda env create --file environment.yml
+name: CM4X
+dependencies:
+- matplotlib
+- mplsettings
+- seaborn
+- pandas
+- xarray
+- dask
+- zarr
+- jupyterlab
+- netcdf4
+- pip
+- pip:
+  - git+https://github.com/jkrasting/doralite
+  - git+https://github.com/hdrake/gfdl_utils
