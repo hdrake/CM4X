@@ -8,7 +8,7 @@ exp_dict = {
         "piControl-spinup": "odiv-210",
         "piControl"       : "odiv-230",
         "historical"      : "odiv-231",
-        "ssp585"          : "odiv-232"
+        "ssp585"          : "odiv-232",
     },
     "CM4p125": {
         "hgrid": (
@@ -16,8 +16,9 @@ exp_dict = {
             "/mosaic_c192_om4p125_bedmachine_v20210310_hydrographyKDunne20210614_unpacked/"
             "ocean_hgrid.nc"
         ),
-        "piControl"  : "odiv-209",
-        "historical" : "odiv-255",
-        "ssp585"     : "odiv-293",
+        "piControl-spinup"  : "odiv-209",
+        "piControl"         : "odiv-313",
+        "historical"        : "odiv-255",
+        "ssp585"            : "odiv-293",
     }
 }
