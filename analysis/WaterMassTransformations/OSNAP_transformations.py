@@ -7,7 +7,7 @@ import regionate
 import xwmb
 import warnings
 
-def save_wmb(name, lons, lats, grid, model, save_maps=False):
+def save_wmb(name, lons, lats, grid, model):
 
     region = regionate.GriddedRegion(
         name,
@@ -45,18 +45,6 @@ def save_wmb(name, lons, lats, grid, model, save_maps=False):
                 wmb_along.grid._ds['convergent_mass_transport_along'].compute()
         )
         wmb.wmt.to_zarr(f"../../data/wmb_{model}_{region.name}_2010-2024.zarr", mode="w")
-
-        if save_maps:
-            # Spatial maps of the time-mean water mass budget terms
-            print("Computing WMT maps")
-            wmb_maps = xwmb.WaterMassBudget(
-                grid,
-                budgets_dict,
-                region
-            )
-            wmb_maps.mass_budget(lam, integrate=False, along_section=False, **kwargs)
-            wmt_timemean_maps = wmb_maps.wmt.sel(xh=slice(-70, 10), yh=slice(53, 70)).drop_dims("time_bounds").mean("time")
-            wmt_timemean_maps.to_zarr(f"../../data/wmb_maps_{model}_{region.name}_2010-2024.zarr", mode="w")
 
 grid_dict = {}
 models = exp_dict.keys()
