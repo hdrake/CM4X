@@ -1,15 +1,28 @@
 # run: conda env create --file environment.yml
 name: CM4X
+channels:
+- conda-forge
 dependencies:
 - matplotlib
+- cmocean
+- cartopy
 - seaborn
 - pandas
 - xarray
+- xesmf
 - dask
 - zarr
 - jupyterlab
 - netcdf4
+- cftime
+- nc-time-axis
+- gsw
+- neutralocean
 - pip
 - pip:
-  - git+https://github.com/jkrasting/doralite
-  - git+https://github.com/hdrake/gfdl_utils
+  - git+https://github.com/jkrasting/doralite@master
+  - git+https://github.com/hdrake/xwmb.git@main
+  - git+https://github.com/hdrake/CM4Xutils.git@main
+  - git+https://github.com/jkrasting/momlevel@main
+  - git+https://github.com/jkrasting/momgrid.git@main
+  - git+https://github.com/jkrasting/cmip_basins.git@main
