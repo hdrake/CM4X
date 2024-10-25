@@ -55,7 +55,7 @@ for model in models:
         load_wmt_ds(model, interval="2020", dmget=True)
     ])
 
-    grid_dict[model] = make_grid(ds)
+    grid_dict[model] = make_wmt_grid(ds)
 
 # OSNAP-EAST
 name = "IrmingerIceland"

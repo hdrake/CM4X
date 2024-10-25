@@ -29,6 +29,6 @@ def save_wmb(grid, model, interval):
 grid_dict = {}
 models = exp_dict.keys()
 for model in models:
-    for interval in np.arange(1750, 2100, 5):
+    for interval in np.arange(2100, 2200, 5):#np.arange(1750, 2100, 5):
         grid = load_wmt_grid(model, interval=str(interval), dmget=True)
         save_wmb(grid, model, interval)
