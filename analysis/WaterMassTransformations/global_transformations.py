@@ -24,19 +24,17 @@ def save_wmb(grid, model):
             budgets_dict
         )
         wmb.mass_budget(lam, integrate=True, along_section=False, **kwargs)
-        wmb.wmt.to_zarr(f"../../data/wmb_{model}_global_2090-2099.zarr", mode="w")
+        wmb.wmt.to_zarr(f"../../data/wmb_{model}_global_2190-2199.zarr", mode="w")
 
 grid_dict = {}
-#models = exp_dict.keys()
-#models = ["CM4Xp25"]
-models = ["CM4Xp125"]
+models = exp_dict.keys()
 for model in models:
     ds = concat_scenarios([
-        load_wmt_ds(model, interval="2090", dmget=True).isel(time_bounds=slice(None, -1)),
-        load_wmt_ds(model, interval="2095", dmget=True)
+        load_wmt_ds(model, interval="2190", dmget=True).isel(time_bounds=slice(None, -1)),
+        load_wmt_ds(model, interval="2195", dmget=True)
     ])
 
-    grid_dict[model] = make_grid(ds)
+    grid_dict[model] = make_wmt_grid(ds)
 
 
 for model, grid in grid_dict.items():
