@@ -1,1 +1,1 @@
-Some sea surface height patterns
+Some sea surface patterns
